@@ -1,0 +1,139 @@
+
+
+/* -----------
+ *  ACCESOS HOME
+ * ----------- */
+
+body{
+    background: #353433;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#accesos-home{
+    background: url(../img/home-bg.jpg)no-repeat 50%;
+    background-size: cover;
+    height: 700px;
+    overflow: hidden;
+
+
+}
+#accesos-home-contenedor{
+    width: 1270px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 140px;
+    position: relative;
+}
+
+#logo-quilmes{
+    position: absolute;
+    width: 25%;
+    top: -35px;
+    left: 0;
+    background: #353433;
+    text-align: center;
+    padding: 35px 0;
+}
+
+#accesos-home-contenedor > div{
+    width: 50%;
+    float: left;
+    height: 450px;
+}
+
+#accesos-home-imagen{
+    background: url(../img/acceso-home-img.jpg)50% no-repeat;
+    background-size: cover;
+}
+#accesos-home-links{}
+
+#menu-home{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 4px;
+}
+#menu-home li{
+    width: 50%;
+    height: 227px;
+    display: table;
+    float: left;
+    padding: 0px 4px 4px 0;
+}
+
+.menu-home-item{
+    display: table-cell;
+    background: #353433;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    transition: .2s all ease-in-out;
+}
+.menu-home-item:hover{text-decoration: none;}
+.menu-home-item h1{
+
+    margin: 0;
+    color: #aeaead;
+    font-size: 16px;
+}
+.menu-home-item h3{
+    display: none;
+}
+
+#acceso1{}
+#acceso2{}
+#acceso3{}
+#acceso4{}
+
+#acceso1:hover .menu-home-item{background: #bdd500}
+#acceso2:hover .menu-home-item{background: #f0528a}
+#acceso3:hover .menu-home-item{background: #08a7a1}
+#acceso4:hover .menu-home-item{background: #fbaf3f}
+
+
+/* -----------
+ *  FOOTER
+ * ----------- */
+
+
+#footer-telefonos{
+    overflow: hidden;
+    border-bottom: 1px solid #4a4948;
+    padding: 30px 0 35px;
+}
+
+#logo-footer{float: left;margin-top: 10px;}
+
+#telefonos{
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.telefono-footer{
+    text-align: center;
+    display: inline-block;
+    min-width: 130px;
+    margin-left: 46px;
+}
+.telefono-footer li{
+    display: inline-block;
+    text-align: center;
+    
+}
+.telefono-footer h4{
+    color: #bdd500;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 0;
+   
+}
+.telefono-footer p{
+    font-size: 14px;
+    color: #727171;
+    margin: 0;
+}
