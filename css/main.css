@@ -1260,7 +1260,7 @@ body.mobile-opened{
 }
 .lista-desordenada-seccion li{text-indent: -1px;}
 .lista-desordenada-seccion li:before{
-    content: "• ";
+    content: "\2022";
     color: #22b1ab;
     font-size: 25px;
     font-family: Arial;
