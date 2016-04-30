@@ -38,9 +38,29 @@ $(document).ready(function () {
         e.preventDefault();
         $('#sub-nav').toggleClass('opened');
     });
-    
-    $('#sub-nav-close').click(function(){
+
+    $('#sub-nav-close').click(function () {
         $('#sub-nav').removeClass('opened');
     });
-    
+
+
+
+    /*
+     * CATEGORIAS NOTICIAS
+     */
+
+    $('.categoria-noticias h4').click(function () {
+
+        var menuCol = $(this).parent('.categoria-noticias');
+
+        $('.categoria-noticias').not(menuCol).removeClass('opened');
+
+        if (!menuCol.hasClass('opened')) {
+            menuCol.addClass('opened');
+        } else {
+            menuCol.removeClass('opened');
+        }
+
+    });
+
 });
