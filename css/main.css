@@ -836,6 +836,7 @@ body.mobile-opened{
     background: none;
     border: none;
     padding: 10px 0 10px 15px;
+    outline: none;
 }
 #mobile-menu-bt i{
     height: 2px;
@@ -843,6 +844,21 @@ body.mobile-opened{
     margin-bottom: 8px;
     display: block;
     background: #9a9a99;
+    transform-origin: -7% 50%;
+    transition: all .6s cubic-bezier(0.23,1,0.32,1);
+}
+
+.mobile-opened #mobile-menu-bt i{
+    opacity: 0;
+}
+
+.mobile-opened #mobile-menu-bt i:first-child{
+    transform: rotate3d(0,0,1,45deg);
+    opacity: 1;
+}
+.mobile-opened #mobile-menu-bt i:last-child{
+    transform: rotate3d(0,0,1,-45deg);
+    opacity: 1;
 }
 
 #nav-mobile{
@@ -924,8 +940,8 @@ body.mobile-opened{
 #nav-mobile-bg  .col-nav-footer{
     width: 100%;
     float: none;
-    transform: translate(-10px,-10px);
-    transition: transform .05s cubic-bezier(0.55, 0.06, 0.68, 0.19),opacity .2s ease-in;
+    transform: translate(-10px,-5px);
+    transition: transform .1s cubic-bezier(0.55, 0.06, 0.68, 0.19),opacity .2s ease-in;
     opacity: 0;
     padding: 0 15px;
 }
@@ -1316,6 +1332,12 @@ body.mobile-opened{
     color: #22b1ab;
     letter-spacing: 0.5px;
 }
+
+.gobierno #breadcrumb .seccion{color: #afc223;}
+.ciudad #breadcrumb .seccion{color: #db4e80;}
+.servicios #breadcrumb .seccion{color: #099b95;}
+.noticias #breadcrumb .seccion{color: #e5a144;}
+
 
 .gobierno #breadcrumb .seccion:hover{color: #afc223;}
 .ciudad #breadcrumb .seccion:hover{color: #db4e80;}
@@ -2440,3 +2462,21 @@ aside.noticias-relacionadas{
 }
 
 aside.noticias-relacionadas .col-categorias-noticia:last-child .categorias-noticia{border-top: none;}
+
+
+/* -----------
+ *  ORGANIGRAMA
+ * ----------- */
+
+.col-organigrama{
+    width: 33.33%;
+    float: left;
+}
+
+.funcionario{}
+.funcionario h1{}
+.funcionario h2{}
+.funcionario-img{
+    width: 180px;
+    height: 180px;
+}
