@@ -3,6 +3,28 @@ $(document).ready(function () {
 
 
 
+    /*
+     * ORGANIGRAMA
+     */
+
+    $('.funcionario-primario').click(function () {
+
+
+
+        $('.funcionario-primario').not($(this)).removeClass('expandido');
+        $(this).toggleClass('expandido');
+    });
+
+    $('.funcionario-secundario').click(function () {
+
+        var colFuncionarios = $(this).parents('.funcionarios-secundarios')
+
+        $(colFuncionarios).find('.funcionario-secundario').not($(this)).removeClass('expandido');
+
+
+        $(this).toggleClass('expandido');
+    });
+
 
     /*
      * INCLUDE NAV 
@@ -10,7 +32,7 @@ $(document).ready(function () {
 
 
     $('#nav-principal-layout').load('layout/nav-principal.html', function () {
-        console.log('loaded')
+
 
         /*
          * NAV SUPERIOR
@@ -19,6 +41,8 @@ $(document).ready(function () {
         $('#nav-principal .contenedor-sitio ul li a').on('click', function (e) {
 
             var item = $(this);
+            var subNav = $('#sub-nav');
+            var subNavMenu = $('.sub-nav-menu');
 
             var left = item.position().left + ((item.width() / 2) + 20);
 
@@ -30,20 +54,29 @@ $(document).ready(function () {
 
             if (itemMenu !== 'noticias') {
                 e.preventDefault();
-                $('#sub-nav').removeClass();
-                $('#sub-nav').addClass('opened ' + itemMenu);
-                $('.sub-nav-menu').removeClass('menu-visible');
+
+                if (subNav.hasClass(itemMenu)) {
+                    closeSubMenu();
+                    return false;
+                }
+
+                subNav.removeClass();
+                subNav.addClass('opened ' + itemMenu);
+                subNavMenu.removeClass('menu-visible');
                 $('#sub-nav-' + itemMenu).addClass('menu-visible');
                 e.stopPropagation();
             }
         });
 
         $('#sub-nav-close , #nav-principal').on('click', function () {
-            $('#nav-principal .contenedor-sitio ul li a').removeClass('activo');
-            $('#sub-nav').removeClass('opened');
-            $('#nav-principal .triangulo').removeClass().addClass('triangulo')
+            closeSubMenu();
         });
 
+        function closeSubMenu() {
+            $('#nav-principal .contenedor-sitio ul li a').removeClass('activo');
+            $('#sub-nav').removeClass();
+            $('#nav-principal .triangulo').removeClass().addClass('triangulo');
+        }
 
         /*
          * MENU MOBILE
@@ -95,6 +128,34 @@ $(document).ready(function () {
                 }, (i + 1) * 100);
             });
         }
+
+
+        /*
+         * FORM BUSQUEDA
+         */
+
+        $('#form-buscar').on('submit', function (e) {
+
+            e.preventDefault();
+            var form = $(this);
+            var input = form.find('input[type=text]');
+            var formOk = true;
+            if (input.val() === '') {
+                form.addClass('form-error');
+                formOk = false;
+            }
+
+            if (formOk) {
+                window.open('http://google.com/search?q=inurl:quilmes.gob.ar+' + input.val());
+            }
+
+        });
+
+        $('#form-buscar input[type=text]').keydown(function () {
+
+            $('#form-buscar').removeClass('form-error');
+
+        });
     });
 
 
